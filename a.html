@@ -1,0 +1,41 @@
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+<script>
+
+    $(function() {
+var json='{"Dev": [{"EMB": "https://www.google.com/","mosic": "www.gmail.com","cnad": "www.google.com"}],"UAT": [{"EMB": "https://www.google.com/","mosic": "www.gmail.com","cnad": "www.google.com"}]}';    
+// Converting JSON encoded string to JS object
+var obj = JSON.parse(json);
+
+$.each(obj, function(i, f) {
+          var tblRow = "<tr>" + "<td>1</td>"+
+								"<td><a href="+obj.Dev[0].EMB+">Dev - Embargo</a></td>" +
+								"<td><a href="+obj.UAT[0].EMB+">UAT - Embargo</a></td>" + 
+		   "</tr>";
+           $(tblRow).appendTo("#userdata tbody");
+     });
+});
+</script>
+</head>
+
+<body>
+
+<div class="wrapper">
+<div class="profile">
+   <table id= "userdata" border="2">
+  <thead>
+            <th>Sl.No</th>
+            <th>Dev</th>
+            <th>UAT</th>
+        </thead>
+      <tbody>
+
+       </tbody>
+   </table>
+
+</div>
+</div>
+
+</body>
+</html>
